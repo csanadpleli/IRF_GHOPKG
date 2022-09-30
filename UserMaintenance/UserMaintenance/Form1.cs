@@ -8,9 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserMaintenance.Properties;
+using UserMaintenance.Entities;
 
 namespace UserMaintenance
 {
+    BindingList<User> users = new BindingList<User>();
     public partial class Form1 : Form
     {
         public Form1()

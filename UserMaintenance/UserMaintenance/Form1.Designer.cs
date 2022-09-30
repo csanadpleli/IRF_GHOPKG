@@ -30,7 +30,7 @@
         {
             this.listUsers = new System.Windows.Forms.ListBox();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.lblFristName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -53,14 +53,14 @@
             this.lblLastName.TabIndex = 1;
             this.lblLastName.Text = "label1";
             // 
-            // lblFristName
+            // lblFirstName
             // 
-            this.lblFristName.AutoSize = true;
-            this.lblFristName.Location = new System.Drawing.Point(165, 52);
-            this.lblFristName.Name = "lblFristName";
-            this.lblFristName.Size = new System.Drawing.Size(35, 13);
-            this.lblFristName.TabIndex = 2;
-            this.lblFristName.Text = "label1";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(165, 52);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(35, 13);
+            this.lblFirstName.TabIndex = 2;
+            this.lblFirstName.Text = "label1";
             // 
             // txtLastName
             // 
@@ -93,7 +93,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.lblFristName);
+            this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.listUsers);
             this.Name = "Form1";
@@ -108,7 +108,7 @@
 
         private System.Windows.Forms.ListBox listUsers;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.Label lblFristName;
+        private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Button btnAdd;
