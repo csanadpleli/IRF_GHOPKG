@@ -25,7 +25,7 @@ namespace IRF04_EXCEL
         {
             InitializeComponent();
             LoadData();
-            //CreateExcel();
+            CreateExcel();
         }
 
         private void LoadData()
@@ -101,7 +101,7 @@ namespace IRF04_EXCEL
                 values[counter, 5] = item.NumberOfRooms;
                 values[counter, 6] = item.FloorArea;
                 values[counter, 7] = item.Price;
-                values[counter, 8] = "";
+                values[counter, 8] = "="+GetCell(counter+2,8)+"/"+GetCell(counter+2,7)+"*1000000";
                 counter++;
             }
 
@@ -117,6 +117,17 @@ namespace IRF04_EXCEL
             headerRange.RowHeight = 40;
             headerRange.Interior.Color = Color.LightBlue;
             headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+
+            Excel.Range tableRange = xlSheet.get_Range(GetCell(1, 1), GetCell(counter+1, headers.Length));
+            tableRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+
+            Excel.Range firstcolRange = xlSheet.get_Range(GetCell(1, 1), GetCell(counter+1, 1));
+            firstcolRange.Font.Bold = true;
+            firstcolRange.Interior.Color = Color.LightYellow;
+
+            Excel.Range lastcolRange = xlSheet.get_Range(GetCell(1, headers.Length), GetCell(counter+1, headers.Length));
+            lastcolRange.Interior.Color = Color.LightGreen;
+            lastcolRange.NumberFormat = "0.00";
 
         }
 
