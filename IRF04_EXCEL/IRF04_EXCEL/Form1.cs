@@ -121,11 +121,11 @@ namespace IRF04_EXCEL
             Excel.Range tableRange = xlSheet.get_Range(GetCell(1, 1), GetCell(counter+1, headers.Length));
             tableRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
 
-            Excel.Range firstcolRange = xlSheet.get_Range(GetCell(1, 1), GetCell(counter+1, 1));
+            Excel.Range firstcolRange = xlSheet.get_Range(GetCell(2, 1), GetCell(counter+1, 1));
             firstcolRange.Font.Bold = true;
             firstcolRange.Interior.Color = Color.LightYellow;
 
-            Excel.Range lastcolRange = xlSheet.get_Range(GetCell(1, headers.Length), GetCell(counter+1, headers.Length));
+            Excel.Range lastcolRange = xlSheet.get_Range(GetCell(2, headers.Length), GetCell(counter+1, headers.Length));
             lastcolRange.Interior.Color = Color.LightGreen;
             lastcolRange.NumberFormat = "0.00";
 
