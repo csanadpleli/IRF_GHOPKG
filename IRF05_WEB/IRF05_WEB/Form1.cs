@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace IRF05_WEB
 {
@@ -26,6 +27,28 @@ namespace IRF05_WEB
             dataGridView1.DataSource = Rates;
 
             XmlProcessing();
+
+            Charting();
+        }
+
+        private void Charting()
+        {
+            chart1.DataSource = Rates;
+
+            var series = chart1.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Date";
+            series.YValueMembers = "Value";
+            series.BorderWidth = 2;
+
+            var legend = chart1.Legends[0];
+            legend.Enabled = false;
+
+            var chartArea = chart1.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.Enabled = false;
+            chartArea.AxisY.IsStartedFromZero = false;
+
         }
 
         private void XmlProcessing()
