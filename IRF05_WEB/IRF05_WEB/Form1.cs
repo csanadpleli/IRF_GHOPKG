@@ -17,8 +17,10 @@ namespace IRF05_WEB
     public partial class Form1 : Form
     {
 
-        BindingList<RateData> Rates;
-        BindingList<string> Currencies;
+        List<RateData> Rates;
+        List<string> Currencies;
+
+        string result;
 
         public Form1()
         {
@@ -38,9 +40,9 @@ namespace IRF05_WEB
 
         private void RefreshData()
         {
-            Rates.Clear();
+           //Rates.Clear();
 
-            GetExchangeRates(request);
+            GetExchangeRates();
 
             XmlProcessing();
 
@@ -99,7 +101,7 @@ namespace IRF05_WEB
             }
         }
 
-        private void GetExchangeRates(request)
+        private void GetExchangeRates()
         {
             var mnbService = new MNBArfolyamServiceSoapClient();
 
@@ -112,9 +114,7 @@ namespace IRF05_WEB
 
             var response = mnbService.GetExchangeRates(request);
 
-            var result = response.GetExchangeRatesResult;
-
-            return response;
+            result = response.GetExchangeRatesResult;
         }
 
         private void Form1_Load(object sender, EventArgs e)
