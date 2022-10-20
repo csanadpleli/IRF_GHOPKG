@@ -22,13 +22,23 @@ namespace IRF05_WEB
         public Form1()
         {
             InitializeComponent();
-            GetExchangeRates(request);
 
-            dataGridView1.DataSource = Rates;
+            RefreshData();
+
+           
+        }
+
+        private void RefreshData()
+        {
+            Rates.Clear();
+
+            GetExchangeRates(request);
 
             XmlProcessing();
 
             Charting();
+            
+            dataGridView1.DataSource = Rates;
         }
 
         private void Charting()
@@ -81,9 +91,9 @@ namespace IRF05_WEB
 
             var request = new GetExchangeRatesRequestBody()
             {
-                currencyNames = "EUR",
-                startDate = "2020-01-01",
-                endDate = "2020-06-30"
+                currencyNames = comboBox1.SelectedItem.ToString(),
+                startDate = dateTimePicker1.Value.ToString(),
+                endDate = dateTimePicker2.Value.ToString()
             };
 
             var response = mnbService.GetExchangeRates(request);
@@ -100,6 +110,22 @@ namespace IRF05_WEB
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
 
         }
     }
