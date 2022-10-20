@@ -18,14 +18,22 @@ namespace IRF05_WEB
     {
 
         BindingList<RateData> Rates;
+        BindingList<string> Currencies;
 
         public Form1()
         {
             InitializeComponent();
 
+            GetCurrencies();
+
             RefreshData();
 
            
+        }
+
+        private void GetCurrencies()
+        {
+            comboBox1.DataSource = Currencies;
         }
 
         private void RefreshData()
@@ -75,6 +83,12 @@ namespace IRF05_WEB
 
                 var childElement = (XmlElement)element.ChildNodes[0];
                 rate.Currency = childElement.GetAttribute("curr");
+                Currencies.Add(rate.Currency);
+
+                if (childElement == null)
+                {
+                    continue;
+                }
 
                 var unit = decimal.Parse(childElement.GetAttribute("unit"));
                 var value = decimal.Parse(childElement.InnerText);
