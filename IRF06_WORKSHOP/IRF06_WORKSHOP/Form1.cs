@@ -71,7 +71,10 @@ namespace IRF06_WORKSHOP
 
         private void ballButton_Click(object sender, EventArgs e)
         {
-            Factory = new BallFactory();
+            Factory = new BallFactory()
+            {
+                BallColor = ballcolorButton.BackColor
+            };
         }
 
         private void DisplayNext()
@@ -86,7 +89,7 @@ namespace IRF06_WORKSHOP
             }
         }
 
-        private void carcolorButton_Click(object sender, EventArgs e)
+        private void ballcolorButton_Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var colorPicker = new ColorDialog();

@@ -35,13 +35,13 @@
             this.carButton = new System.Windows.Forms.Button();
             this.ballButton = new System.Windows.Forms.Button();
             this.nextLabel = new System.Windows.Forms.Label();
-            this.carcolorButton = new System.Windows.Forms.Button();
+            this.ballcolorButton = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
-            this.mainPanel.Controls.Add(this.carcolorButton);
+            this.mainPanel.Controls.Add(this.ballcolorButton);
             this.mainPanel.Controls.Add(this.nextLabel);
             this.mainPanel.Controls.Add(this.ballButton);
             this.mainPanel.Controls.Add(this.carButton);
@@ -91,15 +91,15 @@
             this.nextLabel.TabIndex = 2;
             this.nextLabel.Text = "Coming Next:";
             // 
-            // carcolorButton
+            // ballcolorButton
             // 
-            this.carcolorButton.BackColor = System.Drawing.Color.Salmon;
-            this.carcolorButton.Location = new System.Drawing.Point(85, 44);
-            this.carcolorButton.Name = "carcolorButton";
-            this.carcolorButton.Size = new System.Drawing.Size(75, 23);
-            this.carcolorButton.TabIndex = 3;
-            this.carcolorButton.UseVisualStyleBackColor = false;
-            this.carcolorButton.Click += new System.EventHandler(this.carcolorButton_Click);
+            this.ballcolorButton.BackColor = System.Drawing.Color.Salmon;
+            this.ballcolorButton.Location = new System.Drawing.Point(85, 44);
+            this.ballcolorButton.Name = "ballcolorButton";
+            this.ballcolorButton.Size = new System.Drawing.Size(75, 23);
+            this.ballcolorButton.TabIndex = 3;
+            this.ballcolorButton.UseVisualStyleBackColor = false;
+            this.ballcolorButton.Click += new System.EventHandler(this.ballcolorButton_Click);
             // 
             // Form1
             // 
@@ -124,7 +124,7 @@
         private System.Windows.Forms.Label nextLabel;
         private System.Windows.Forms.Button ballButton;
         private System.Windows.Forms.Button carButton;
-        private System.Windows.Forms.Button carcolorButton;
+        private System.Windows.Forms.Button ballcolorButton;
     }
 }
 

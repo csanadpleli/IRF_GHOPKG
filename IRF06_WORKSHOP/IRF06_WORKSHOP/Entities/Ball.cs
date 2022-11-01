@@ -11,18 +11,12 @@ namespace IRF06_WORKSHOP.Entities
 {
     public class Ball : Toy
     {
-        public Ball()
-        {
-            AutoSize = false;
-            Width = 50;
-            Height = Width;
-            Paint += Ball_Paint;
+        public SolidBrush BallColor { get; private set; }
 
-        }
-
-        private void Ball_Paint(object sender, PaintEventArgs e)
+        public Ball(Color color)
         {
-            DrawImage(e.Graphics);
+            BallColor = new SolidBrush(color);
+
         }
 
         protected override void DrawImage(Graphics g)
@@ -30,9 +24,5 @@ namespace IRF06_WORKSHOP.Entities
            g.FillEllipse(new SolidBrush(Color.Blue),0,0,Width,Height);
         }
 
-        public void MoveBall() 
-        {
-            Left += 1;
-        }
     }
 }
