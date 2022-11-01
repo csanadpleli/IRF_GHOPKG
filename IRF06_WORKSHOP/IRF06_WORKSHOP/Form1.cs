@@ -77,6 +77,15 @@ namespace IRF06_WORKSHOP
             };
         }
 
+        private void presentButton_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory()
+            {
+                BoxColor = boxcolorButton.BackColor,
+                RibbonColor = ribboncolorBurron.BackColor
+            };
+        }
+
         private void DisplayNext()
         {
             if (_nextToy != null)
@@ -101,5 +110,11 @@ namespace IRF06_WORKSHOP
             }
             button.BackColor = colorPicker.Color;
         }
+
+        private void nextLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
