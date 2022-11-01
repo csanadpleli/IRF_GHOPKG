@@ -16,6 +16,8 @@ namespace IRF06_WORKSHOP
     {
         private List<Toy> _toys = new List<Toy>();
 
+        private Toy _nextToy;
+
         private IToyFactory _factory;
         public IToyFactory Factory
         {
@@ -59,6 +61,28 @@ namespace IRF06_WORKSHOP
                 var oldestBall = _toys[0];
                 mainPanel.Controls.Remove(oldestBall);
                 _toys.Remove(oldestBall);
+            }
+        }
+
+        private void carButton_Click(object sender, EventArgs e)
+        {
+            Factory = new CarFactory();
+        }
+
+        private void ballButton_Click(object sender, EventArgs e)
+        {
+            Factory = new BallFactory();
+        }
+
+        private void DisplayNext()
+        {
+            if (_nextToy != null)
+            {
+                Controls.Remove(_nextToy);
+                _nextToy = Factory.CreateNew();
+                _nextToy.Top=nextLabel.Top+nextLabel.Height+20;
+                _nextToy.Left=nextLabel.Left;
+                Controls.Add(_nextToy);
             }
         }
     }
