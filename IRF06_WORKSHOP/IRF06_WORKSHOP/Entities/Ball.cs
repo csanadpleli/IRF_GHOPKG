@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IRF06_WORKSHOP
+namespace IRF06_WORKSHOP.Entities
 {
     public class Ball : Label
     {
