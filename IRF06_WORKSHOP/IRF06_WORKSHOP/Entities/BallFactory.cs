@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IRF06_WORKSHOP.Entities
 {
-    internal class BallFactory
+    public class BallFactory
     {
         public Ball CreateBall()
         {
