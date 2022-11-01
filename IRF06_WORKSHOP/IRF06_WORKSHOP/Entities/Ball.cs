@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IRF06_WORKSHOP.Abstraction;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IRF06_WORKSHOP.Entities
 {
-    public class Ball : Label
+    public class Ball : Toy
     {
         public Ball()
         {
@@ -24,7 +25,7 @@ namespace IRF06_WORKSHOP.Entities
             DrawImage(e.Graphics);
         }
 
-        protected void DrawImage(Graphics g)
+        protected override void DrawImage(Graphics g)
         {
            g.FillEllipse(new SolidBrush(Color.Blue),0,0,Width,Height);
         }

@@ -23,7 +23,7 @@ namespace IRF06_WORKSHOP.Abstraction
             DrawImage(e.Graphics);
         }
 
-        protected abstarct void DrawImage(Graphics g);
+        protected abstract void DrawImage(Graphics g);
 
         public virtual void MoveToy()
         {
