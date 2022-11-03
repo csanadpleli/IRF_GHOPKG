@@ -10,8 +10,8 @@ namespace IRF06_WORKSHOP.Entities
 {
     public class PresentFactory : IToyFactory
     {
-        public Color BoxColor { get; private set; }
-        public Color RibbonColor { get; private set; }
+        public Color BoxColor { get; set; }
+        public Color RibbonColor { get; set; }
 
         public Toy CreateNew()
         {

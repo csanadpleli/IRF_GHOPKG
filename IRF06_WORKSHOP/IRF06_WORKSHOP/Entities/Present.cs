@@ -22,8 +22,8 @@ namespace IRF06_WORKSHOP.Entities
         protected override void DrawImage(Graphics g)
         {
             g.FillRectangle(BoxColor,0,0,Width,Height);
-            g.FillRectangle(RibbonColor, 0, Height*1/4, Width, Height*3/4);
-            g.FillRectangle(RibbonColor, Width*1/4, 0, Width*3/4, Height);
+            g.FillRectangle(RibbonColor, 0, Height*2/5, Width, Height*1/5);
+            g.FillRectangle(RibbonColor, Width*2/5, 0, Width*1/5, Height);
         }
     }
 }

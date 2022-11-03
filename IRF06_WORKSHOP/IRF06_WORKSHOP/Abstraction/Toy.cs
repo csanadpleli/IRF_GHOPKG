@@ -15,6 +15,7 @@ namespace IRF06_WORKSHOP.Abstraction
             AutoSize = false;
             Width = 50;
             Height = Width;
+            Top = 200;
             Paint += Toy_Paint;
         }
 

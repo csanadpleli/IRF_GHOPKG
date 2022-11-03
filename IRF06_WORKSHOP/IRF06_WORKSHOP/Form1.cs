@@ -22,7 +22,7 @@ namespace IRF06_WORKSHOP
         public IToyFactory Factory
         {
             get { return _factory; }
-            set { _factory = value; }
+            set { _factory = value; DisplayNext(); }
         }
 
         public Form1()
@@ -91,11 +91,11 @@ namespace IRF06_WORKSHOP
             if (_nextToy != null)
             {
                 Controls.Remove(_nextToy);
-                _nextToy = Factory.CreateNew();
-                _nextToy.Top=nextLabel.Top+nextLabel.Height+20;
-                _nextToy.Left=nextLabel.Left;
-                Controls.Add(_nextToy);
             }
+            _nextToy = Factory.CreateNew();
+            _nextToy.Top = nextLabel.Top + nextLabel.Height + 20;
+            _nextToy.Left = nextLabel.Left;
+            Controls.Add(_nextToy);
         }
 
         private void ballcolorButton_Click(object sender, EventArgs e)
