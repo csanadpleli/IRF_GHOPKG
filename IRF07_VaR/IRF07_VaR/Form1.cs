@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace IRF07_VaR
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+        List<decimal> Nyeresegek = new List<decimal>();
 
         public Form1()
         {
@@ -26,7 +28,6 @@ namespace IRF07_VaR
 
             CreatePortfolio();
 
-            List<decimal> Nyereségek = new List<decimal>();
             int intervalum = 30;
             DateTime kezdőDátum = (from x in Ticks select x.TradingDay).Min();
             DateTime záróDátum = new DateTime(2016, 12, 30);
@@ -35,11 +36,11 @@ namespace IRF07_VaR
             {
                 decimal ny = GetPortfolioValue(kezdőDátum.AddDays(i + intervalum))
                            - GetPortfolioValue(kezdőDátum.AddDays(i));
-                Nyereségek.Add(ny);
+                Nyeresegek.Add(ny);
                 Console.WriteLine(i + " " + ny);
             }
 
-            var nyereségekRendezve = (from x in Nyereségek
+            var nyereségekRendezve = (from x in Nyeresegek
                                       orderby x
                                       select x)
                                         .ToList();
@@ -75,6 +76,30 @@ namespace IRF07_VaR
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog()
+            {
+                DefaultExt = "txt",
+                Filter = "txt files (*.txt)|*.txt",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter r = File.CreateText(sfd.FileName);
+                r.WriteLine("Idoszak\tNyereseg");
+                int index = 0;
+                foreach (var item in Nyeresegek)
+                {
+                    r.WriteLine(index + "\t" + item);
+                    index++;
+                }
+                r.Close();
+            }
         }
     }
 }
