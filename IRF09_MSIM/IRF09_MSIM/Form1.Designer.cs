@@ -41,52 +41,65 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(13, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Záróév";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(54, 11);
+            this.numericUpDown1.Location = new System.Drawing.Point(60, 16);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(57, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(69, 20);
             this.numericUpDown1.TabIndex = 1;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            2025,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(144, 13);
+            this.label2.Location = new System.Drawing.Point(155, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.label2.Text = "Népesség fájl";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(200, 11);
+            this.textBox1.Location = new System.Drawing.Point(232, 14);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 20);
+            this.textBox1.Size = new System.Drawing.Size(367, 20);
             this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "C:\\Windows\\Temp\\nép.csv";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(494, 11);
+            this.button1.Location = new System.Drawing.Point(632, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
+            this.button1.Text = "Browse";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(575, 11);
+            this.button2.Location = new System.Drawing.Point(713, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
+            this.button2.Text = "Start";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // richTextBox1
             // 

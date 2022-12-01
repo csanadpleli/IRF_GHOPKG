@@ -47,7 +47,7 @@ namespace IRF09_MSIM
                                     where x.Gender == Gender.Female && x.IsAlive
                                     select x).Count();
                 Console.WriteLine(
-                    string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
+                    string.Format("Év: {0} Fiúk: {1} Lányok: {2}", year, nbrOfMales, nbrOfFemales));
                 male.Add(nbrOfMales);
                 female.Add(nbrOfFemales);
             }
@@ -56,7 +56,7 @@ namespace IRF09_MSIM
         {
             for (int i = 2005; i <= numericUpDown1.Value; i++)
             {
-                richTextBox1.AppendText(string.Format("Szimulációs év:{0}\n\tFiúk:{1}\n\tLányok:{2}\n", i, male[seged], female[seged]));
+                richTextBox1.AppendText(string.Format("Szimulációs év:{0}\n\tFiúk:{1}\n\tLányok:{2}\n\n", i, male[seged], female[seged]));
                 seged++;
             }
         }
