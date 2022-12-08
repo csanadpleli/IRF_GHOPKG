@@ -22,6 +22,8 @@ namespace IRF10_EVO
         int nbrOfStepsIncrement = 10;
         int generation = 1;
 
+        Brain winnerBrain = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -70,7 +72,19 @@ namespace IRF10_EVO
                     gc.AddPlayer(b.Mutate());
             }
             gc.Start();
+
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
         }
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
