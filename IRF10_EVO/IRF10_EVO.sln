@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRF10_EVO", "IRF10_EVO\IRF10_EVO.csproj", "{F1BAD041-B046-4174-8491-779CE132CFBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1BAD041-B046-4174-8491-779CE132CFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1BAD041-B046-4174-8491-779CE132CFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1BAD041-B046-4174-8491-779CE132CFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1BAD041-B046-4174-8491-779CE132CFBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C008A0A2-4FDF-4672-9BD7-DA90CB93EE95}
+	EndGlobalSection
+EndGlobal
